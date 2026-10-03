@@ -147,7 +147,20 @@ void OrderManager::addRecord() {
 
     int index = choice - 1;
     BuildingMaterial* selectedItem = catalog.getItem(index);
-
+    ifstream checkFile(fileName, ios::binary);
+    if (checkFile.is_open()) {
+        Material checkData;
+        while (checkFile.read(reinterpret_cast<char*>(&checkData), sizeof(checkData))) {
+            if (strcmp(checkData.name, selectedItem->getName()) == 0) {
+                cout << "\nОшибка! Товар \"" << selectedItem->getName()
+                    << "\" уже есть в вашем заказе!\n"
+                    << "Воспользуйтесь функцией редактирования записи, чтобы изменить его количество.\n";
+                checkFile.close();
+                return;
+            }
+        }
+        checkFile.close();
+    }
     int qty = inputInt("Введите количество для заказа: ");
 
     if (qty <= 0) {
