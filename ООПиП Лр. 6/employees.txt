@@ -1,0 +1,2 @@
+fgh ;15;2000;TEMP;23;CONS;fghjk
+ghjk;45;2000;PERM-MAN;45;12
