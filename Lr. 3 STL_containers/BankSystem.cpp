@@ -1,8 +1,6 @@
 #include "BankSystem.h"
 #include <limits>
 #include <windows.h>
-#define NOMINMAX
-
 
 void setColor(int color) {
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
