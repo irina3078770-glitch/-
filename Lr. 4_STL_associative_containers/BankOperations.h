@@ -20,7 +20,6 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <vector>
 #include <map>
 #include <set>
 #include <unordered_map>
@@ -45,63 +44,96 @@ const int CLR_MAGENTA = 13;
 const int CLR_BLUE = 9;
 
 inline string toLowerStr(string str) {
-    for (int i = 0; i < str.length(); i++) {
+    for (size_t i = 0; i < str.length(); i++) {
         str[i] = tolower(static_cast<unsigned char>(str[i]));
     }
     return str;
 }
 
-//Банковская операция
+// 1. Базовый класс счета
+class BankAccount {
+protected:
+    string accountNumber;
+    string clientName;
+public:
+    BankAccount(string accNum = "BY00UNBS00000000000000000000", string name = "Неизвестно");
+    virtual ~BankAccount() = default;
+
+    string getAccountNumber() const { return accountNumber; }
+    string getClientName() const { return clientName; }
+
+    void setAccountNumber(const string& acc) { accountNumber = acc; }
+    void setClientName(const string& name) { clientName = name; }
+
+    virtual void printInfo() const;
+};
+
+// 2. Производный класс (Наследование)
+class DepositAccount : public BankAccount {
+private:
+    double interestRate;
+public:
+    DepositAccount(string accNum = "BY00UNBS00000000000000000000", string name = "Неизвестно", double rate = 0.0);
+    double getInterestRate() const { return interestRate; }
+    void setInterestRate(double rate) { interestRate = rate; }
+    void printInfo() const override;
+};
+
+// 3. Класс операции (Композиция)
 class BankTransaction {
 private:
     int id;
-    string accountNumber; 
-    string type; 
     double amount;
-    double comission;
+    string date;
+    BankAccount account; // Композиция
 
 public:
     BankTransaction();
-    BankTransaction(int id, string accNum, string type, double amount, double comission);
+    BankTransaction(int id, double amount, string date, BankAccount acc);
 
     int getId() const { return id; }
-    string getAccountNumber() const { return accountNumber; }
-    string getType() const { return type; }
     double getAmount() const { return amount; }
-    double getCom() const { return comission; }
+    string getDate() const { return date; }
+    BankAccount getAccount() const { return account; }
 
     void setId(int newId) { id = newId; }
-    void setAccountNumber(const string& acc) { accountNumber = acc; }
-    void setType(const string& t) { type = t; }
-    void setAmount(double a) { amount = a; }
-    void setFee(double c) { comission = c; }
+    void setAmount(double amt) { amount = amt; }
+    void setDate(const string& d) { date = d; }
+    void setAccount(const BankAccount& acc) { account = acc; }
 
     void inputData();
 
-    bool operator<(const BankTransaction& other) const {
-        return id < other.id;
-    }
-    bool operator==(const BankTransaction& other) const {
-        return id == other.id;
-    }
+    bool operator<(const BankTransaction& other) const { return id < other.id; }
+    bool operator==(const BankTransaction& other) const { return id == other.id; }
 
     friend ostream& operator<<(ostream& os, const BankTransaction& tx);
     friend istream& operator>>(istream& is, BankTransaction& tx);
 };
 
-//Менеджер контейнеров
+// 4. Класс филиала (Агрегация)
+class BankBranch {
+private:
+    string branchName;
+    const BankTransaction* lastTransaction;
+public:
+    BankBranch(string bName = "Центральное отделение (Минск)", const BankTransaction* trans = nullptr);
+    void setLastTransaction(const BankTransaction* trans) { lastTransaction = trans; }
+    void showBranchStatus() const;
+};
+
+// 5. Менеджер на базе 8 ассоциативных контейнеров
 class BankManager {
 private:
     int nextId;
 
-    map <int, BankTransaction> mapTx;                     // Справочник по ID: ID клиента - банковская операция
-    set<string> setAccounts;                              // Уникальные счета клиентов
-    multimap<string, BankTransaction> multimapAccTx;      // История по счёту: Банковский счёт - операции клиента
-    multiset<double> multisetAmounts;                     // Сортированные операции по возрастанию  
-    unordered_map<int, BankTransaction> unMapTx;          // Быстрый доступ по ID для поиска: ID клиента - банковская операция 
-    unordered_set<string> unSetVerifiedAccs;              // Список счетов
-    unordered_multimap<string, BankTransaction> unMultiMapTypeTx; // Группировка операций по типу: тип операции - сама операция
-    unordered_multiset<double> unMultiSetCom;            // Комиссии банка
+    map<int, BankTransaction> mapTx;                          // Справочник по ID
+    set<string> setAccounts;                                  // Уникальные IBAN счетов (по алфавиту)
+    multimap<string, BankTransaction> multimapAccTx;          // История по счёту клиента
+    multiset<double> multisetAmounts;                         // Суммы операций (по возрастанию)
+    unordered_map<int, BankTransaction> unMapTx;              // Быстрый хеш-поиск по ID
+    unordered_set<string> unSetVerifiedAccs;                  // Хеш-сет проверенных счетов
+    unordered_multimap<string, BankTransaction> unMultiMapNameTx; // Группировка по ФИО клиента
+    unordered_multiset<double> unMultiSetAmounts;             // Неупорядоченный мультисет сумм
 
 public:
     BankManager();

@@ -120,7 +120,7 @@ void printTableFooter();
 template<typename Container>
 class OperationManager {
 private:
-    Container data; // Контейнер
+    Container data;
 
 public:
     OperationManager() {}
