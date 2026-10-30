@@ -271,7 +271,7 @@ int chooseSortType();
 void runArrayMenu();
 
 template <typename Container>
-void runDynamicMenu(OperationManager<Container>& manager, string title, bool isVector) {
+void runDynamicMenu(OperationManager<Container>& manager, string title, bool isVector, BankBranch& branch) {
     int choice = -1;
     while (choice != 0) {
         setColor(11);
@@ -282,11 +282,11 @@ void runDynamicMenu(OperationManager<Container>& manager, string title, bool isV
         cout << "======================================================\n";
         setColor(13);
         cout << "1 - Просмотреть все банковские операции\n";
-        cout << "2 - Провести новую банковскую операцию (Добавить)\n";
-        cout << "3 - Корректировка операции (Редактировать по ID)\n";
-        cout << "4 - Отмена банковской операции (Удалить по ID)\n";
+        cout << "2 - Провести новую банковскую операцию \n";
+        cout << "3 - Редактирование операции по ID\n";
+        cout << "4 - Отмена банковской операции \n";
         cout << "5 - Поиск операции по ID\n";
-        cout << "6 - Фильтр операций по минимальной сумме (BYN)\n";
+        cout << "6 - Фильтрация операций по минимальной сумме (BYN)\n";
         cout << "7 - Сортировка операций (по сумме или алфавиту)\n";
         cout << "8 - Экспорт данных в файл\n";
         cout << "9 - Импорт данных из файла\n";
@@ -305,8 +305,9 @@ void runDynamicMenu(OperationManager<Container>& manager, string title, bool isV
             string acc = inputAlphanumericString("Введите IBAN счет клиента: ");
             char nameBuf[100];
             inputString(nameBuf, 100, "Введите ФИО клиента: ");
-
             manager.addTransaction(BankTransaction(amt, date, BankAccount(acc, string(nameBuf))));
+            branch.setLastTransaction(&manager.getContainer().back());
+
             setColor(10);
             cout << "Банковская операция успешно зарегистрирована!\n";
             setColor(7);

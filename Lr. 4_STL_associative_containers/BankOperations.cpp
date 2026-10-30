@@ -71,7 +71,6 @@ istream& operator>>(istream& is, BankTransaction& tx) {
     return is;
 }
 
-// --- Реализация BankBranch (Агрегация) ---
 BankBranch::BankBranch(string bName, const BankTransaction* trans)
     : branchName(bName), lastTransaction(trans) {
 }
@@ -89,7 +88,6 @@ void BankBranch::showBranchStatus() const {
     setColor(CLR_DEFAULT);
 }
 
-// --- Реализация BankManager ---
 BankManager::BankManager() : nextId(1) {}
 
 int BankManager::inputInt(const string& prompt) {
@@ -179,7 +177,7 @@ bool BankManager::removeTransaction(int id) {
     setAccounts.clear();
     unSetVerifiedAccs.clear();
 
-    for (map<int, BankTransaction>::iterator p = mapTx.begin(); p != mapTx.end(); ++p) {
+    for (map<int, BankTransaction>::iterator p = mapTx.begin(); p != mapTx.end(); p++) {
         setAccounts.insert(p->second.getAccount().getAccountNumber());
         multimapAccTx.insert(make_pair(p->second.getAccount().getAccountNumber(), p->second));
         multisetAmounts.insert(p->second.getAmount());
@@ -244,7 +242,7 @@ void BankManager::displayAllMap() const {
     setColor(CLR_DEFAULT);
     if (mapTx.empty()) { cout << "Список пуст.\n"; return; }
     printHeader();
-    for (map<int, BankTransaction>::const_iterator it = mapTx.begin(); it != mapTx.end(); ++it) {
+    for (map<int, BankTransaction>::const_iterator it = mapTx.begin(); it != mapTx.end(); it++) {
         cout << it->second << "\n";
     }
 }
@@ -255,7 +253,7 @@ void BankManager::displayAllSet() const {
     setColor(CLR_DEFAULT);
     if (setAccounts.empty()) { cout << "Счетов нет.\n"; return; }
     int i = 1;
-    for (set<string>::const_iterator it = setAccounts.begin(); it != setAccounts.end(); ++it) {
+    for (set<string>::const_iterator it = setAccounts.begin(); it != setAccounts.end(); it++) {
         cout << i++ << ". Счет: ";
         setColor(CLR_CYAN); 
         cout << *it;
@@ -280,7 +278,7 @@ void BankManager::displayAllMultiSet() const {
     cout << "\n--- Суммы операций (по возрастанию) ---\n";
     setColor(CLR_DEFAULT);
     if (multisetAmounts.empty()) { cout << "Данных нет.\n"; return; }
-    for (multiset<double>::const_iterator it = multisetAmounts.begin(); it != multisetAmounts.end(); ++it) {
+    for (multiset<double>::const_iterator it = multisetAmounts.begin(); it != multisetAmounts.end(); it++) {
         setColor(CLR_GREEN);
         cout << fixed << setprecision(2) << *it << " BYN  ";
     }
@@ -338,8 +336,8 @@ void BankManager::displayAllUnorderedMultiSet() const {
 }
 
 void BankManager::searchById(int id) const {
-    map<int, BankTransaction>::const_iterator it = mapTx.find(id);
-    if (it != mapTx.end()) {
+    unordered_map<int, BankTransaction>::const_iterator it = unMapTx.find(id);
+    if (it != unMapTx.end()) {
         setColor(CLR_GREEN);
         cout << "\nРЕЗУЛЬТАТ ПОИСКА:\n";
         setColor(CLR_DEFAULT);
@@ -377,7 +375,7 @@ bool BankManager::saveToFile(const string& filename) const {
         return false;
     }
 
-    for (map<int, BankTransaction>::const_iterator it = mapTx.begin(); it != mapTx.end(); ++it) {
+    for (map<int, BankTransaction>::const_iterator it = mapTx.begin(); it != mapTx.end(); it++) {
         file << it->second.getId() << "|"
             << it->second.getAmount() << "|"
             << it->second.getDate() << "|"
@@ -401,7 +399,6 @@ bool BankManager::loadFromFile(const string& filename) {
         return false;
     }
 
-    // Очищаем все контейнеры перед загрузкой новых данных
     mapTx.clear();
     setAccounts.clear();
     multimapAccTx.clear();

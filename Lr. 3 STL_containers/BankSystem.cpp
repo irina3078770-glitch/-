@@ -162,7 +162,8 @@ BankTransaction::BankTransaction(int tId, double amt, string d, BankAccount acc)
     if (tId >= nextId) {
         nextId = tId + 1;
     }
-}int BankTransaction::getId() const { return id; }
+}
+int BankTransaction::getId() const { return id; }
 double BankTransaction::getAmount() const { return amount; }
 string BankTransaction::getDate() const { return date; }
 BankAccount BankTransaction::getAccount() const { return account; }
@@ -310,8 +311,8 @@ void deleteFromList(list<BankTransaction>& lst, int id) {
 int chooseSortType() {
     setColor(13);
     cout << "\nÂûáåðèòå êðèòåðèé ñîðòèðîâêè:\n";
-    cout << "1. Ïî ñóììå îïåðàöèè (ïî âîçðàñòàíèþ, BYN)\n";
-    cout << "2. Ïî àëôàâèòó (ÔÈÎ êëèåíòà, À-ß)\n";
+    cout << "1 - Ïî ñóììå îïåðàöèè (ïî âîçðàñòàíèþ, BYN)\n";
+    cout << "2 - Ïî àëôàâèòó (ÔÈÎ êëèåíòà, À-ß)\n";
     setColor(7);
     int type = inputInt("Âàø âûáîð: ");
     return (type == 2) ? 2 : 1;
@@ -330,7 +331,7 @@ void runArrayMenu() {
         setColor(11);
         cout << "\n======================================================\n";
         setColor(13);
-        cout << "  ÄÍÅÂÍÎÉ ÐÅÅÑÒÐ ÂÀËÞÒÍÛÕ ËÈÌÈÒÎÂ (std::array, N=3)\n";
+        cout << "  ÄÍÅÂÍÎÉ ÐÅÅÑÒÐ ÂÀËÞÒÍÛÕ ËÈÌÈÒÎÂ \n";
         setColor(11);
         cout << "======================================================\n";
         setColor(13);

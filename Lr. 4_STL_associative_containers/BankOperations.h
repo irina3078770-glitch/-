@@ -50,7 +50,7 @@ inline string toLowerStr(string str) {
     return str;
 }
 
-// 1. Базовый класс счета
+// Банковский счёт
 class BankAccount {
 protected:
     string accountNumber;
@@ -68,7 +68,7 @@ public:
     virtual void printInfo() const;
 };
 
-// 2. Производный класс (Наследование)
+// Депозитный счёт
 class DepositAccount : public BankAccount {
 private:
     double interestRate;
@@ -79,7 +79,7 @@ public:
     void printInfo() const override;
 };
 
-// 3. Класс операции (Композиция)
+// Банковская операция
 class BankTransaction {
 private:
     int id;
@@ -110,29 +110,29 @@ public:
     friend istream& operator>>(istream& is, BankTransaction& tx);
 };
 
-// 4. Класс филиала (Агрегация)
+// Банковский филиал
 class BankBranch {
 private:
     string branchName;
-    const BankTransaction* lastTransaction;
+    const BankTransaction* lastTransaction; //агрегация
 public:
     BankBranch(string bName = "Центральное отделение (Минск)", const BankTransaction* trans = nullptr);
     void setLastTransaction(const BankTransaction* trans) { lastTransaction = trans; }
     void showBranchStatus() const;
 };
 
-// 5. Менеджер на базе 8 ассоциативных контейнеров
+// Менеджер банковских операций
 class BankManager {
 private:
     int nextId;
 
-    map<int, BankTransaction> mapTx;                          // Справочник по ID
-    set<string> setAccounts;                                  // Уникальные IBAN счетов (по алфавиту)
-    multimap<string, BankTransaction> multimapAccTx;          // История по счёту клиента
+    map<int, BankTransaction> mapTx;                          // Справочник по ID: ID-операция
+    set<string> setAccounts;                                  // Уникальные IBAN счета (по алфавиту)
+    multimap<string, BankTransaction> multimapAccTx;          // История по счёту клиента: счет - операция
     multiset<double> multisetAmounts;                         // Суммы операций (по возрастанию)
     unordered_map<int, BankTransaction> unMapTx;              // Быстрый хеш-поиск по ID
     unordered_set<string> unSetVerifiedAccs;                  // Хеш-сет проверенных счетов
-    unordered_multimap<string, BankTransaction> unMultiMapNameTx; // Группировка по ФИО клиента
+    unordered_multimap<string, BankTransaction> unMultiMapNameTx; // ФИО клиента-операция 
     unordered_multiset<double> unMultiSetAmounts;             // Неупорядоченный мультисет сумм
 
 public:

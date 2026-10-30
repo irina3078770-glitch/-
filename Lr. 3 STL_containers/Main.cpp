@@ -6,8 +6,8 @@ int main() {
 
     clearScreen();
 
-    OperationManager<list<BankTransaction>> retailManager;
     OperationManager<vector<BankTransaction>> corporateManager;
+    OperationManager<list<BankTransaction>> retailManager;
 
     DepositAccount depAcc("BY99UNBS31300000000000009999", "Смирнов А.С.", 9.5);
     BankTransaction sampleTrans(1, 15000.00, "16.10.2026", depAcc);
@@ -22,21 +22,21 @@ int main() {
         setColor(11);
         cout << "===========================================================\n";
         setColor(13);
-        cout << "1 - Реестр операций физических лиц (std::list)\n";
-        cout << "2 - Реестр корпоративных платежей юр. лиц (std::vector)\n";
-        cout << "3 - Лимиты кассовых операций филиала (std::array)\n";
+        cout << "1 - Реестр операций физических лиц\n";
+        cout << "2 - Реестр операций юридических лиц\n";
+        cout << "3 - Ежедневные операции в банке\n";
         setColor(12); 
-        cout << "0 - Завершить работу банковской системы\n";
+        cout << "0 - Выйти из банковской системы\n";
         setColor(7);
 
         mainChoice = inputInt("Ваш выбор: ");
 
         switch (mainChoice) {
         case 1:
-            runDynamicMenu(retailManager, "ОПЕРАЦИИ ФИЗИЧЕСКИХ ЛИЦ (std::list)", false);
+            runDynamicMenu(retailManager, "ОПЕРАЦИИ ФИЗИЧЕСКИХ ЛИЦ", false, branch);
             break;
         case 2:
-            runDynamicMenu(corporateManager, "КОРПОРАТИВНЫЕ ПЛАТЕЖИ (std::vector)", true);
+            runDynamicMenu(corporateManager, "КОРПОРАТИВНЫЕ ПЛАТЕЖИ", true, branch);
             break;
         case 3:
             runArrayMenu();
