@@ -90,7 +90,7 @@ public:
         out << "ID: " << setw(6) << left << app.getId()
             << " | Ñóììà: " << setw(10) << right << app.getAmount() << " BYN"
             << " | Äàòà: " << setw(10) << app.getDate()
-            << " | Ñ÷åò: " << setw(15) << app.getAccountNumber()
+            << " | Ñ÷åò: " << setw(15) << app.getAccountNumber() <<"\n"
             << " | Êëèåíò: " << setw(15) << left << app.getClientName()
             << " | Ğåéòèíã: " << setw(3) << right << app.creditScore << "/100";
         return out;
