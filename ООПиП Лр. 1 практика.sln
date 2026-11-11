@@ -31,6 +31,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lr. 3 STL_containers", "Lr.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lr. 4_STL_associative_containers", "Lr. 4_STL_associative_containers\Lr. 4_STL_associative_containers.vcxproj", "{237D2B32-872E-4232-8062-A04638F9AA83}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lr. 5_adapters", "Lr. 5_adapters\Lr. 5_adapters.vcxproj", "{8FA19932-534A-4633-83E4-889C54EBDD7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -151,6 +153,14 @@ Global
 		{237D2B32-872E-4232-8062-A04638F9AA83}.Release|x64.Build.0 = Release|x64
 		{237D2B32-872E-4232-8062-A04638F9AA83}.Release|x86.ActiveCfg = Release|Win32
 		{237D2B32-872E-4232-8062-A04638F9AA83}.Release|x86.Build.0 = Release|Win32
+		{8FA19932-534A-4633-83E4-889C54EBDD7A}.Debug|x64.ActiveCfg = Debug|x64
+		{8FA19932-534A-4633-83E4-889C54EBDD7A}.Debug|x64.Build.0 = Debug|x64
+		{8FA19932-534A-4633-83E4-889C54EBDD7A}.Debug|x86.ActiveCfg = Debug|Win32
+		{8FA19932-534A-4633-83E4-889C54EBDD7A}.Debug|x86.Build.0 = Debug|Win32
+		{8FA19932-534A-4633-83E4-889C54EBDD7A}.Release|x64.ActiveCfg = Release|x64
+		{8FA19932-534A-4633-83E4-889C54EBDD7A}.Release|x64.Build.0 = Release|x64
+		{8FA19932-534A-4633-83E4-889C54EBDD7A}.Release|x86.ActiveCfg = Release|Win32
+		{8FA19932-534A-4633-83E4-889C54EBDD7A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
