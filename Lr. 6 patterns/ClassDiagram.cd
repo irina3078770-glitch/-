@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OperationDocument" Collapsed="true">
+    <Position X="5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DepositReceipt" Collapsed="true">
+    <Position X="2.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAIAAAAACAAAAAAAoAAAAAAAAYAAAAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WithdrawalSlip" Collapsed="true">
+    <Position X="5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAAAAAAAAAAAAAAAAACAAAAAAAoAAAAABAAQAAAAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TransferInvoice" Collapsed="true">
+    <Position X="7.25" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QgAAAAAAAAAAAAAAAAAACAAQAAAAoAAAAAAAAQAAAAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PaymentCheck" Collapsed="true">
+    <Position X="9.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAEAACAAAAAABoAAAAAAAAQAAAAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExchangeCertificate" Collapsed="true">
+    <Position X="0.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAgAAAAAAABAACAAAAAAAoACAAAAAAQAAAAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OperationSpec" Collapsed="true">
+    <Position X="5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAACAAAAQAAgAAAAAAAAQABAgA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DepositSpec" Collapsed="true">
+    <Position X="2.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAIAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WithdrawalSpec" Collapsed="true">
+    <Position X="5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAABAIAAAAAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TransferSpec" Collapsed="true">
+    <Position X="7.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UtilityPaymentSpec" Collapsed="true">
+    <Position X="9.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAQABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CurrencyExchangeSpec" Collapsed="true">
+    <Position X="0.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAAAAAAABAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BankOperation" Collapsed="true">
+    <Position X="5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgBAAQAJgAQAAIAIACAADAAgEGACgICQAAAAEwAAQgA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OperationCreator" Collapsed="true">
+    <Position X="5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DepositCreator" Collapsed="true">
+    <Position X="5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WithdrawalCreator" Collapsed="true">
+    <Position X="7.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TransferCreator" Collapsed="true">
+    <Position X="9.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UtilityPaymentCreator" Collapsed="true">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CurrencyExchangeCreator" Collapsed="true">
+    <Position X="2.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClonableOperation&lt;DerivedT&gt;" Collapsed="true">
+    <Position X="5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DepositOperation" Collapsed="true">
+    <Position X="5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAIAAAAABAAgAEADAACAAAAAAgAAQAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WithdrawalOperation" Collapsed="true">
+    <Position X="7.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIBAAAAAAAAAAAABAAgAEADAACAAABAAgAAQAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TransferOperation" Collapsed="true">
+    <Position X="9.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAABAAAAAAAAAAACBAAgAEADAACAAAAAAgAAQAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UtilityPaymentOperation" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAABAAgAEADAACAAEAAAgAAQAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CurrencyExchangeOperation" Collapsed="true">
+    <Position X="2.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAgAIAAAAABAABAAgAEADAACAAAAAAgAAQAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="OperationType" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAMABAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BankOperations.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

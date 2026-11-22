@@ -126,3 +126,5 @@ void filterStackByAmount(const stack<BankTransaction>& s);
 
 void editPriorityQueueAmount(priority_queue<CreditApplication>& pq);
 void filterPriorityQueueByAmount(const priority_queue<CreditApplication>& pq);
+
+

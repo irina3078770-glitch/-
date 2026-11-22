@@ -255,7 +255,7 @@ void StackMenu() {
         cout << "            ИСТОРИЯ ОПЕРАЦИЙ                 \n";
         cout << "=========================================\n";
         setColor(7);
-        cout << " " << setw(2) << left << "1." << " Показать историю\n"
+        cout << " " << setw(2) << left << "1." << "Показать историю операций\n"
             << " " << setw(2) << left << "2." << " Добавить операцию\n"
             << " " << setw(2) << left << "3." << " Отменить последнюю операцию\n"
             << " " << setw(2) << left << "4." << " Найти по ID\n"
@@ -600,7 +600,9 @@ void loadPriorityQueueFromFile(priority_queue<CreditApplication>& pq, const stri
 
 void editQueueAmount(queue<BankTransaction>& q) {
     if (q.empty()) {
-        setColor(12); cout << "Очередь пуста.\n"; setColor(7);
+        setColor(12); 
+        cout << "Очередь пуста.\n"; 
+        setColor(7);
         return;
     }
     int targetId = inputInt("Введите ID операции для редактирования суммы: ");

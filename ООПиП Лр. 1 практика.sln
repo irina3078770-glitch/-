@@ -33,6 +33,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lr. 4_STL_associative_conta
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lr. 5_adapters", "Lr. 5_adapters\Lr. 5_adapters.vcxproj", "{8FA19932-534A-4633-83E4-889C54EBDD7A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lr. 6 patterns", "Lr. 6 patterns\Lr. 6 patterns.vcxproj", "{9AC67856-4881-4A76-9D5B-F561AF5BA444}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -161,6 +163,14 @@ Global
 		{8FA19932-534A-4633-83E4-889C54EBDD7A}.Release|x64.Build.0 = Release|x64
 		{8FA19932-534A-4633-83E4-889C54EBDD7A}.Release|x86.ActiveCfg = Release|Win32
 		{8FA19932-534A-4633-83E4-889C54EBDD7A}.Release|x86.Build.0 = Release|Win32
+		{9AC67856-4881-4A76-9D5B-F561AF5BA444}.Debug|x64.ActiveCfg = Debug|x64
+		{9AC67856-4881-4A76-9D5B-F561AF5BA444}.Debug|x64.Build.0 = Debug|x64
+		{9AC67856-4881-4A76-9D5B-F561AF5BA444}.Debug|x86.ActiveCfg = Debug|Win32
+		{9AC67856-4881-4A76-9D5B-F561AF5BA444}.Debug|x86.Build.0 = Debug|Win32
+		{9AC67856-4881-4A76-9D5B-F561AF5BA444}.Release|x64.ActiveCfg = Release|x64
+		{9AC67856-4881-4A76-9D5B-F561AF5BA444}.Release|x64.Build.0 = Release|x64
+		{9AC67856-4881-4A76-9D5B-F561AF5BA444}.Release|x86.ActiveCfg = Release|Win32
+		{9AC67856-4881-4A76-9D5B-F561AF5BA444}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
